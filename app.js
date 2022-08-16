@@ -20,6 +20,12 @@ function Employee(id, name, department, level, imageURL, salary) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min);
   }
+  /*function image(imageURL) {
+    var img = document.createElement("img");
+    col.appendChild(img);
+    const att = document.createAttribute("src");
+    att.value = "imageURL";
+  }*/
 }
 
 let employees = [
@@ -75,4 +81,33 @@ let employees = [
 ];
 for (const Employee of employees) {
   console.log(Employee.fullName + " " + Employee.salary);
+}
+
+//SELECTING THE MAIN
+let main = document.querySelector("main");
+
+//CREATING THE TABLE
+var table = document.createElement("table");
+main.appendChild(table);
+
+var col = Object.keys(employees[0]);
+
+// CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+
+var tr = table.insertRow(-1); // TABLE ROW.
+
+for (var i = 0; i < col.length; i++) {
+  var th = document.createElement("th"); // TABLE HEADER.
+  th.innerHTML = col[i];
+  tr.appendChild(th);
+}
+
+// ADD OBJECT DATA TO THE TABLE AS ROWS.
+for (var i = 0; i < employees.length; i++) {
+  tr = table.insertRow(-1);
+
+  for (var j = 0; j < col.length; j++) {
+    var tabCell = tr.insertCell(-1);
+    tabCell.innerHTML = employees[i][col[j]];
+  }
 }
