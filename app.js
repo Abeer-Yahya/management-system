@@ -82,9 +82,9 @@ let employees = [
 for (const Employee of employees) {
   console.log(Employee.fullName + " " + Employee.salary);
 }
-
+/*
 //SELECTING THE MAIN
-let main = document.querySelector("main");
+const main = document.querySelector("main");
 
 //CREATING THE TABLE
 var table = document.createElement("table");
@@ -110,4 +110,61 @@ for (var i = 0; i < employees.length; i++) {
     var tabCell = tr.insertCell(-1);
     tabCell.innerHTML = employees[i][col[j]];
   }
+}
+*/
+const main = document.querySelector("main");
+
+let form = document.querySelector("form");
+let cardContainer = document.getElementById("cardContainer");
+
+function data(event) {
+  let id = document.getElementById("id").value;
+  let fullName = document.getElementById("fname").value;
+  let department = document.getElementById("select1").value;
+  let level = document.getElementById("select2").value;
+  let imageUrl = document.getElementById("image").value;
+  let employeeForm = new Employee(id, fullName, department, level, imageUrl);
+  console.log(employeeForm);
+  createCard(employeeForm);
+  event.preventDefault();
+}
+
+form.addEventListener("submit", data);
+//using Bootstrap card classes
+function createCard(employeeForm) {
+  let divCol = document.createElement("div");
+  divCol.className = "col-sm-6";
+  cardContainer.append(divCol);
+
+  let card = document.createElement("div");
+  card.className = "card";
+  divCol.append(card);
+
+  let imgCard = document.createElement("img");
+  imgCard.className = "card-img-top";
+  imgCard.style.width = "50px";
+  imgCard.src = employeeForm.imageUrl;
+  card.append(imgCard);
+
+  let cardBody = document.createElement("div");
+  cardBody.className = "card-body";
+  card.append(cardBody);
+
+  let cardTitle = document.createElement("h5");
+  cardTitle.className = "card-title";
+  cardTitle.textContent = "Employee";
+  cardBody.append(cardTitle);
+
+  let cardText = document.createElement("p");
+  cardText.className = "card-text";
+  cardText.textContent =
+    "Name: " +
+    employeeForm.fullName +
+    " - ID: " +
+    employeeForm.EmployeeID +
+    " Department: " +
+    employeeForm.department +
+    " - Level: " +
+    employeeForm.level;
+  cardBody.append(cardText);
 }

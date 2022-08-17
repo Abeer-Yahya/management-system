@@ -73,6 +73,95 @@ tr:nth-child(odd) {
   background-color: #42506b;
 }
 /**************************/
+/* FORM */
+/**************************/
+.section-cta {
+  padding: 4.8rem 0 12.8rem;
+}
+
+.container {
+  /* 1140px */
+  max-width: 120rem;
+  max-height: 80rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+.cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  box-shadow: 0 2.4rem 4.8rem rgb(66, 80, 107, 0.15);
+  border-radius: 11px;
+
+  background-image: linear-gradient(to right bottom, #42506b, #3e619b);
+  overflow: hidden;
+}
+
+.cta-text-box {
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+  color: #ef4b4c;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+}
+
+label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: #e9e9eb;
+  border: none;
+  background-color: #3e619b;
+  border-radius: 9px;
+  box-shadow: 0 1px 2px rgb(66, 80, 107, 0.1);
+}
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  transition: all 0.3s;
+}
+.btn--form {
+  background-color: #ef4b4c;
+  color: #e9e9eb;
+  align-self: end;
+  padding: 1.2rem;
+}
+
+.btn--form:hover {
+  background-color: #e9e9eb;
+  color: #ef4b4c;
+}
+/**************************/
+/* CARDS */
+/**************************/
+.cardContainer {
+  max-width: 18rem;
+}
+/**************************/
 /* FOOTER */
 /**************************/
 footer {
